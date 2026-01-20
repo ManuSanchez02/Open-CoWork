@@ -8,6 +8,14 @@ A desktop AI coding assistant for everyone. Open source alternative to Claude Co
 
 ---
 
+## Screenshots
+
+![Landing](docs/landing.png)
+
+![Twitter Skill](docs/twitter.png)
+
+---
+
 ## Installation
 
 ### Prerequisites
