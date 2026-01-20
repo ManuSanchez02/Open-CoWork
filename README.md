@@ -1,84 +1,109 @@
 # Open CoWork
 
-A desktop AI coding assistant for non-technical users, built with Electron + React.
+A desktop AI coding assistant for everyone. Open source alternative to Claude Code, Cursor, and similar tools.
 
-## Features
+**If you find this project useful, please consider giving it a star!**
 
-- Chat interface with AI (Claude, GPT-4o, Gemini via OpenRouter)
-- Tool execution (file read/write, directory listing, shell commands)
-- TODO tracking panel
-- Skills marketplace (skillregistry.io integration)
-- Multi-tab conversations
-- Dark/light theme support
-- Encrypted API key storage
+[![GitHub stars](https://img.shields.io/github/stars/autonoma/open-cowork?style=social)](https://github.com/autonoma/open-cowork)
 
-## Tech Stack
+---
 
-- **Framework**: Electron + electron-vite
-- **UI**: React 18 + TypeScript + Tailwind CSS + shadcn/ui
-- **State**: React Query + Zustand
-- **AI**: Vercel AI SDK + OpenRouter provider
-- **Database**: SQLite via Prisma
-- **Security**: Electron safeStorage for API key encryption
-
-## Development
+## Installation
 
 ### Prerequisites
 
-- Node.js 18+
-- pnpm
+- [Node.js](https://nodejs.org/) v18 or higher
+- [pnpm](https://pnpm.io/) package manager
 
-### Setup
+### Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/autonoma/open-cowork.git
+cd open-cowork
+
 # Install dependencies
 pnpm install
 
-# Generate Prisma client
-pnpm db:generate
-
-# Run database migrations
-pnpm db:push
-
-# Start development server
+# Run in development mode
 pnpm dev
 ```
 
-### Build
+### Building from Source
 
+#### macOS
 ```bash
-# Build for production
-pnpm build
-
-# Package for distribution
-pnpm run build
+pnpm build:mac
 ```
+Output: `dist/Open CoWork-x.x.x.dmg`
 
-## Project Structure
-
+#### Windows
+```bash
+pnpm build:win
 ```
-open-cowork/
-├── prisma/              # Database schema
-├── src/
-│   ├── main/            # Electron main process
-│   │   ├── index.ts     # Entry point
-│   │   ├── database.ts  # Prisma setup
-│   │   └── ipc/         # IPC handlers
-│   ├── preload/         # Preload script
-│   └── renderer/        # React app
-│       ├── components/  # UI components
-│       ├── hooks/       # React hooks
-│       ├── stores/      # Zustand stores
-│       └── services/    # AI services
-└── resources/           # App resources
+Output: `dist/open-cowork-x.x.x-setup.exe`
+
+#### Linux
+```bash
+pnpm build:linux
 ```
+Output: `dist/open-cowork-x.x.x.AppImage`
 
-## Configuration
+---
 
-1. On first launch, enter your OpenRouter API key
-2. Get an API key from [openrouter.ai/keys](https://openrouter.ai/keys)
-3. Optionally enable analytics to help improve the app
+## Help Wanted
+
+We're actively looking for contributors to help with:
+
+### Build & Distribution
+- **Windows builds** - We need help testing and fixing Windows builds
+- **macOS builds** - Help with code signing and notarization
+- **Linux builds** - Testing on various distributions (Ubuntu, Fedora, Arch, etc.)
+
+### Bug Hunting
+- **Finding and reporting bugs** - Use the app and report any issues you encounter
+- **Reproducing issues** - Help confirm bugs reported by others
+- **Writing bug fixes** - Submit PRs for issues you can fix
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b fix/my-bug-fix`)
+3. Commit your changes (`git commit -m 'Fix: description of fix'`)
+4. Push to the branch (`git push origin fix/my-bug-fix`)
+5. Open a Pull Request
+
+Please report bugs at [GitHub Issues](https://github.com/autonoma/open-cowork/issues).
+
+---
+
+## Features
+
+- Chat-based AI assistant with tool execution
+- File system access with permission controls
+- Multi-conversation support with tabs
+- Skills marketplace (integrated with skillregistry.io)
+- Pre-installed skills for PDF, Word, Excel, and PowerPoint
+- Dark/light/system theme support
+
+---
+
+## Tech Stack
+
+- Electron + electron-vite
+- React 18 + TypeScript
+- Tailwind CSS + shadcn/ui
+- Prisma + SQLite
+- Vercel AI SDK
+
+---
 
 ## License
 
-MIT
+[MIT](LICENSE) © 2026 Autonoma
+
+---
+
+**Like what you see? Star the repo to show your support!**
+
+[![Star this repo](https://img.shields.io/github/stars/autonoma/open-cowork?style=for-the-badge&logo=github)](https://github.com/autonoma/open-cowork)

@@ -3,6 +3,8 @@ productName: Open CoWork
 directories:
   buildResources: resources
   output: dist
+npmRebuild: true
+nodeGypRebuild: false
 files:
   - '!**/.vscode/*'
   - '!src/*'
@@ -10,10 +12,24 @@ files:
   - '!{.eslintignore,.eslintrc.cjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+  - '!prisma/*'
+extraResources:
+  - from: prisma/
+    to: prisma/
+    filter:
+      - '**/*'
+  - from: node_modules/.prisma/
+    to: app.asar.unpacked/node_modules/.prisma/
+    filter:
+      - '**/*'
 asarUnpack:
   - resources/**
   - node_modules/.prisma/**
-  - node_modules/@prisma/engines/**
+  - node_modules/@prisma/**
+  - node_modules/.pnpm/@prisma*/**
+  - node_modules/.pnpm/.prisma*/**
+  - node_modules/better-sqlite3/**
+  - node_modules/.pnpm/better-sqlite3*/**
 win:
   executableName: OpenCoWork
   icon: resources/icon.png

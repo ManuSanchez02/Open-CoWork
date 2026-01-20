@@ -2,7 +2,7 @@ import posthog from 'posthog-js'
 
 // PostHog configuration
 // This is a write-only public key - safe to include in client code
-const POSTHOG_KEY = 'phc_REPLACE_WITH_YOUR_KEY'
+const POSTHOG_KEY = 'phc_iNm6Q6FDfO9xi29jmMNnXunX08HVpoY2kS626Irq6lc'
 const POSTHOG_HOST = 'https://us.i.posthog.com'
 
 let isInitialized = false

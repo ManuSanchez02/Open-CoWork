@@ -4,15 +4,14 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   main: {
-    plugins: [
-      externalizeDepsPlugin({
-        exclude: ['@prisma/client', '.prisma/client']
-      })
-    ],
+    plugins: [externalizeDepsPlugin()],
     build: {
       rollupOptions: {
         external: [
           'better-sqlite3',
+          '@prisma/client',
+          '.prisma/client',
+          '.prisma/client/default',
           'playwright',
           'playwright-core',
           /^chromium-bidi.*/,

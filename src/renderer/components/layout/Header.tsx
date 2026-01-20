@@ -1,6 +1,8 @@
-import { Menu, Settings, Store, ListTodo } from 'lucide-react'
+import { Menu, Settings, Store, ListTodo, Bug } from 'lucide-react'
 import { Button } from '../ui/button'
 import { useUIStore } from '../../stores/uiStore'
+
+const DISCORD_INVITE_URL = 'https://discord.gg/4Y6jn92q'
 
 export function Header() {
   const { toggleSidebar, toggleSettings, toggleMarketplace, toggleTodoPanel, todoPanelOpen } =
@@ -51,6 +53,17 @@ export function Header() {
           title="Skills Marketplace"
         >
           <Store className="h-4 w-4" />
+        </Button>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="h-8 w-8"
+          asChild
+          title="Report a Bug"
+        >
+          <a href={DISCORD_INVITE_URL} target="_blank" rel="noopener noreferrer">
+            <Bug className="h-4 w-4" />
+          </a>
         </Button>
         <Button
           variant="ghost"
